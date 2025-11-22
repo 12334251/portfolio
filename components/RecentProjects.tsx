@@ -5,6 +5,7 @@ import { projects } from "@/data";
 import React from "react";
 import { PinContainer } from "./ui/3d-pin";
 import { FaLocationArrow } from "react-icons/fa6";
+import { FaApple, FaGooglePlay } from "react-icons/fa";
 import {
   Modal,
   ModalBody,
@@ -34,6 +35,8 @@ const RecentProjects = () => {
               link,
               gitLink,
               mobileAppLink,
+              appStoreLink,
+              playStoreLink,
             }) => (
               <Modal key={id}>
                 <ModalTrigger className="sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[80vw]">
@@ -66,7 +69,23 @@ const RecentProjects = () => {
                               transform: `translateX(-${5 * index * 2}px)`,
                             }}
                           >
-                            <img src={icon} alt={icon} className="p-2" />
+                            {/* CHECK IF ICON IS EXPRESS JS */}
+                            {icon === "/expressjs-icon.svg" ? (
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                className="p-2 w-full h-full text-white opacity-80"
+                              >
+                                <path d="m13.78 16.92 3.35-4.54.42.55 2.87 4a1.26 1.26 0 0 0 1.58.6l-4-5.33a.56.56 0 0 1 0-.82l2.1-2.74 1.55-2a1.18 1.18 0 0 0-1.49.55l-3 4-3-4a1.31 1.31 0 0 0-1.58-.55l4 5.2-4.29 5.77a1.23 1.23 0 0 0 1.49-.69M9.93 7.19a4.81 4.81 0 0 0-7.57 2.73L2 11.65v1a5 5 0 0 1 .11.57 5.42 5.42 0 0 0 1.37 3.2 5.24 5.24 0 0 0 6.09.78 4.49 4.49 0 0 0 2.15-3.3c-.52-.16-.81-.07-1 .49a3.36 3.36 0 0 1-2.15 2.39c-3.25 1.09-5.8-1.05-5.66-4.59h8.9c.1-2-.3-3.76-1.88-5m-7 4.22C3 8.77 4.76 7 7.16 7c2.18 0 3.77 1.84 3.83 4.4z"></path>
+                              </svg>
+                            ) : icon === "/aws-svgrepo-com.svg" ? (
+                              <div className="rounded-full bg-white lg:w-7 lg:h-7 w-5 h-5 flex justify-center items-center">
+                                <img src={icon} alt={icon} className="p-1" />
+                              </div>
+                            ) : (
+                              <img src={icon} alt={icon} className="p-2" />
+                            )}
                           </div>
                         ))}
                       </div>
@@ -78,7 +97,6 @@ const RecentProjects = () => {
                       </div>
                     </div>
                   </PinContainer>
-                  {/* </a> */}
                 </ModalTrigger>
                 <ModalBody>
                   <ModalContent>
@@ -88,8 +106,10 @@ const RecentProjects = () => {
                         {(() => {
                           const items: string[] = [];
                           if (mobileAppLink) items.push("mobile app");
+                          if (appStoreLink) items.push("App Store app");
+                          if (playStoreLink) items.push("Play Store app");
                           if (link) items.push("website");
-                          items.push("GitHub repo");
+                          if (gitLink) items.push("GitHub repo");
 
                           if (items.length === 1) {
                             return items[0];
@@ -106,16 +126,12 @@ const RecentProjects = () => {
                       </span>{" "}
                       — enjoy! 🚀
                     </h4>
-                    {/* ─── NEW responsive frame/container ─── */}
                     <div className="relative w-[80vw] max-w-[100%] aspect-[16/9] overflow-hidden rounded-2xl bg-[#13162d] mx-auto">
-                      {/* ─── Full‐bleed “floor” or background image ─── */}
                       <img
                         src="/bg.png"
                         alt="dark‐frame background"
                         className="absolute inset-0 w-full h-full object-cover"
                       />
-
-                      {/* ─── Project screenshot (Earth, etc.), centered and fully visible ─── */}
                       <img
                         src={img}
                         alt={title}
@@ -127,50 +143,95 @@ const RecentProjects = () => {
                       />
                     </div>
                   </ModalContent>
-                  <ModalFooter className="flex flex-wrap justify-center gap-4 px-4 py-3">
-                    {/* Mobile App Button */}
-                    {mobileAppLink && (
+                  {id === 1 ? (
+                    <ModalFooter className="flex flex-wrap justify-center gap-4 px-4 py-3">
                       <a
-                        href={mobileAppLink}
+                        href={appStoreLink}
                         rel="noopener noreferrer"
                         className="inline-flex items-center w-full sm:w-auto px-4 py-2 bg-gradient-to-r from-indigo-500 to-blue-500 text-white rounded-md hover:from-indigo-600 hover:to-blue-600 transition-colors duration-150"
                       >
-                        {/* Icon background “pill” */}
                         <span className="flex items-center justify-center mr-2 w-6 h-6 bg-white/30 rounded-full">
-                          <FiSmartphone className="w-4 h-4 text-white" />
+                          <FaApple className="w-4 h-4 text-white" />
                         </span>
-                        View Mobile App
+                        App Store App
                       </a>
-                    )}
-
-                    {/* GitHub Repo Button */}
-                    <a
-                      href={gitLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center w-full sm:w-auto px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-900 transition-colors duration-150"
-                    >
-                      <span className="flex items-center justify-center mr-2 w-6 h-6 bg-white/20 rounded-full">
-                        <FiGithub className="w-4 h-4 text-white" />
-                      </span>
-                      GitHub Repo
-                    </a>
-
-                    {/* Live Website Button */}
-                    {link && (
                       <a
-                        href={link}
-                        target="_blank"
+                        href={playStoreLink}
                         rel="noopener noreferrer"
-                        className="inline-flex items-center w-full sm:w-auto px-4 py-2 bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-md hover:from-green-600 hover:to-teal-600 transition-colors duration-15"
+                        className="inline-flex items-center w-full sm:w-auto px-4 py-2 bg-gradient-to-r from-indigo-500 to-blue-500 text-white rounded-md hover:from-indigo-600 hover:to-blue-600 transition-colors duration-150"
                       >
                         <span className="flex items-center justify-center mr-2 w-6 h-6 bg-white/30 rounded-full">
-                          <FiGlobe className="w-4 h-4 text-white" />
+                          <FaGooglePlay className="w-4 h-4 text-white" />
                         </span>
-                        Visit Website
+                        Play Store App
                       </a>
-                    )}
-                  </ModalFooter>
+                      {gitLink && (
+                        <a
+                          href={gitLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center w-full sm:w-auto px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-900 transition-colors duration-150"
+                        >
+                          <span className="flex items-center justify-center mr-2 w-6 h-6 bg-white/20 rounded-full">
+                            <FiGithub className="w-4 h-4 text-white" />
+                          </span>
+                          GitHub Repo
+                        </a>
+                      )}
+                      {link && (
+                        <a
+                          href={link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center w-full sm:w-auto px-4 py-2 bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-md hover:from-green-600 hover:to-teal-600 transition-colors duration-15"
+                        >
+                          <span className="flex items-center justify-center mr-2 w-6 h-6 bg-white/30 rounded-full">
+                            <FiGlobe className="w-4 h-4 text-white" />
+                          </span>
+                          Visit Website
+                        </a>
+                      )}
+                    </ModalFooter>
+                  ) : (
+                    <ModalFooter className="flex flex-wrap justify-center gap-4 px-4 py-3">
+                      {mobileAppLink && (
+                        <a
+                          href={mobileAppLink}
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center w-full sm:w-auto px-4 py-2 bg-gradient-to-r from-indigo-500 to-blue-500 text-white rounded-md hover:from-indigo-600 hover:to-blue-600 transition-colors duration-150"
+                        >
+                          <span className="flex items-center justify-center mr-2 w-6 h-6 bg-white/30 rounded-full">
+                            <FiSmartphone className="w-4 h-4 text-white" />
+                          </span>
+                          View Mobile App
+                        </a>
+                      )}
+                      <a
+                        href={gitLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center w-full sm:w-auto px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-900 transition-colors duration-150"
+                      >
+                        <span className="flex items-center justify-center mr-2 w-6 h-6 bg-white/20 rounded-full">
+                          <FiGithub className="w-4 h-4 text-white" />
+                        </span>
+                        GitHub Repo
+                      </a>
+                      {link && (
+                        <a
+                          href={link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center w-full sm:w-auto px-4 py-2 bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-md hover:from-green-600 hover:to-teal-600 transition-colors duration-15"
+                        >
+                          <span className="flex items-center justify-center mr-2 w-6 h-6 bg-white/30 rounded-full">
+                            <FiGlobe className="w-4 h-4 text-white" />
+                          </span>
+                          Visit Website
+                        </a>
+                      )}
+                    </ModalFooter>
+                  )}
                 </ModalBody>
               </Modal>
             )

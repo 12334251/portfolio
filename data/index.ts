@@ -72,6 +72,26 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
+    title: "LYNKD App to Explore",
+    des: "Lynkd blends social media with e-commerce, giving creators an edge to earn more than youtube through exciting engagement with followers with brands they relate to.",
+    img: "/LYNKD.png",
+    iconLists: [
+      "/re.svg",
+      "/next.svg",
+      "/expressjs-icon.svg",
+      "/nestjs.svg",
+      "firebase.svg",
+      "/aws-svgrepo-com.svg",
+      "/tail.svg",
+      "/ts.svg",
+    ],
+    // link: "https://www.socialsiteapp.in/",
+    // gitLink: "https://github.com/12334251?tab=repositories",
+    appStoreLink: "https://expo.dev/artifacts/eas/9oTaQBfGk22phtt6G6VaW3.apk",
+    playStoreLink: "https://expo.dev/artifacts/eas/9oTaQBfGk22phtt6G6VaW3.apk",
+  },
+  {
+    id: 2,
     title: "Social Media App to Explore",
     des: "Connect with friends, share moments, and discover new communities with a modern app.",
     img: "/SocialMedia.png",
@@ -87,14 +107,6 @@ export const projects = [
     link: "https://www.socialsiteapp.in/",
     gitLink: "https://github.com/12334251?tab=repositories",
     mobileAppLink: "https://expo.dev/artifacts/eas/9oTaQBfGk22phtt6G6VaW3.apk",
-  },
-  {
-    id: 2,
-    title: "Yoom - Video Conferencing App",
-    des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
-    img: "/p2.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    gitLink: "https://github.com/12334251?tab=repositories",
   },
   {
     id: 3,
@@ -166,13 +178,19 @@ export const companies = [
     img: "/ViamagusLogo.svg",
     nameImg: "/hostName.svg",
   },
+  {
+    id: 4,
+    name: "LYNKD",
+    img: "/LYNKD-Company.png",
+    nameImg: "/hostName.svg",
+  },
 ];
 
 export const workExperience = [
   {
     id: 1,
-    title: "Frontend Engineer Intern",
-    desc: "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
+    title: "Frontend Engineer",
+    desc: "Engineered a cross-platform solution for mobile and web using React Native and Next.js, delivering a consistent and interactive user experience.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },
