@@ -87,8 +87,9 @@ export const projects = [
     ],
     // link: "https://www.socialsiteapp.in/",
     // gitLink: "https://github.com/12334251?tab=repositories",
-    appStoreLink: "https://expo.dev/artifacts/eas/9oTaQBfGk22phtt6G6VaW3.apk",
-    playStoreLink: "https://expo.dev/artifacts/eas/9oTaQBfGk22phtt6G6VaW3.apk",
+    appStoreLink: "https://apps.apple.com/in/app/lynkd/id6740008236",
+    playStoreLink:
+      "https://play.google.com/store/apps/details?id=com.lynkd.socialcommerce",
   },
   {
     id: 2,
@@ -106,15 +107,17 @@ export const projects = [
     ],
     link: "https://www.socialsiteapp.in/",
     gitLink: "https://github.com/12334251?tab=repositories",
-    mobileAppLink: "https://expo.dev/artifacts/eas/9oTaQBfGk22phtt6G6VaW3.apk",
+    mobileAppLink:
+      "https://play.google.com/store/apps/details?id=com.lynkd.socialcommerce",
   },
   {
     id: 3,
-    title: "AI Image SaaS - Canva Application",
-    des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
-    img: "/p3.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    gitLink: "https://github.com/12334251?tab=repositories",
+    title: "Barbeque Nation - Buffets & More",
+    des: "Rebuilt the Barbeque Nation mobile app using React Native & Expo, accelerating launch load times and introducing a fully redesigned UI, with state management powered by Zustand and TanStack Query.",
+    img: "/barbeque-nation-project.png",
+    iconLists: ["/re.svg", "/ts.svg", "/tail.svg"],
+    appStoreLink: "https://apps.apple.com/in/app/barbeque-nation/id1080269411",
+    playStoreLink: "https://play.google.com/store/search?q=bbq&c=apps",
   },
   {
     id: 4,
@@ -135,9 +138,9 @@ export const testimonials = [
   },
   {
     quote:
-      "Mukesh Kumar Gupta developed the Milkman app, which delivers dairy products, using React Native, Next.js, NestJS, Firebase, Socket.io, AWS S3, and Docker. Collaborating with him was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Mukesh’s enthusiasm for every facet of development truly stands out. If you’re looking to elevate your website and strengthen your brand, Mukesh is the ideal partner.",
-    name: "Rajendra Singh",
-    title: "Founder, Milkman",
+      "Mukesh was instrumental in leading the complete rebuild of the Barbeque Nation mobile application. Under his frontend leadership, we transitioned to Expo, which dramatically improved launch performance. His approach to state management using Zustand and data caching via TanStack Query modernised our code base. His attention to detail, proactive problem-solving, and dedication to delivering a high-quality UI/UX make him an exceptional engineer.",
+    name: "Ahmed Raza Sayed",
+    title: "CTO, Barbeque Nation Hospitality Ltd.",
   },
   {
     quote:
@@ -147,15 +150,21 @@ export const testimonials = [
   },
   {
     quote:
-      "Mukesh Kumar Gupta developed the Milkman app, which delivers dairy products, using React Native, Next.js, NestJS, Firebase, Socket.io, AWS S3, and Docker. Collaborating with him was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Mukesh’s enthusiasm for every facet of development truly stands out. If you’re looking to elevate your website and strengthen your brand, Mukesh is the ideal partner.",
-    name: "Rajendra Singh",
-    title: "Founder, Milkman",
+      "Mukesh was instrumental in leading the complete rebuild of the Barbeque Nation mobile application. Under his frontend leadership, we transitioned to Expo, which dramatically improved launch performance. His approach to state management using Zustand and data caching via TanStack Query modernised our code base. His attention to detail, proactive problem-solving, and dedication to delivering a high-quality UI/UX make him an exceptional engineer.",
+    name: "Ahmed Raza Sayed",
+    title: "CTO, Barbeque Nation Hospitality Ltd.",
   },
   {
     quote:
       "Mukesh Kumar Gupta developed the Milkman app, which delivers dairy products, using React Native, Next.js, NestJS, Firebase, Socket.io, AWS S3, and Docker. Collaborating with him was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Mukesh’s enthusiasm for every facet of development truly stands out. If you’re looking to elevate your website and strengthen your brand, Mukesh is the ideal partner.",
     name: "Rajendra Singh",
     title: "Founder, Milkman",
+  },
+  {
+    quote:
+      "Mukesh was instrumental in leading the complete rebuild of the Barbeque Nation mobile application. Under his frontend leadership, we transitioned to Expo, which dramatically improved launch performance. His approach to state management using Zustand and data caching via TanStack Query modernised our code base. His attention to detail, proactive problem-solving, and dedication to delivering a high-quality UI/UX make him an exceptional engineer.",
+    name: "Ahmed Raza Sayed",
+    title: "CTO, Barbeque Nation Hospitality Ltd.",
   },
 ];
 
@@ -182,6 +191,12 @@ export const companies = [
     id: 4,
     name: "LYNKD",
     img: "/LYNKD-Company.png",
+    nameImg: "/hostName.svg",
+  },
+  {
+    id: 5,
+    name: "Delphic Global (Barbeque Nation Hospitality Ltd.)",
+    img: "/barbeque-nation.svg",
     nameImg: "/hostName.svg",
   },
 ];

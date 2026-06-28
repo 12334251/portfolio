@@ -49,7 +49,7 @@ const RecentProjects = () => {
                         src={img}
                         alt={title}
                         className={`z-10 absolute bottom-0 ${
-                          id === 1 ? "w-[90%] h-[90%]" : ""
+                          appStoreLink || playStoreLink ? "w-[90%] h-[90%]" : ""
                         }`}
                       />
                     </div>
@@ -136,35 +136,41 @@ const RecentProjects = () => {
                         src={img}
                         alt={title}
                         className={`absolute inset-0 m-auto object-contain ${
-                          id === 1
+                          appStoreLink || playStoreLink
                             ? "w-[90%] h-[90%] bottom-0 mb-0"
                             : " w-full h-full"
                         }`}
                       />
                     </div>
                   </ModalContent>
-                  {id === 1 ? (
+                  {appStoreLink || playStoreLink ? (
                     <ModalFooter className="flex flex-wrap justify-center gap-4 px-4 py-3">
-                      <a
-                        href={appStoreLink}
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center w-full sm:w-auto px-4 py-2 bg-gradient-to-r from-indigo-500 to-blue-500 text-white rounded-md hover:from-indigo-600 hover:to-blue-600 transition-colors duration-150"
-                      >
-                        <span className="flex items-center justify-center mr-2 w-6 h-6 bg-white/30 rounded-full">
-                          <FaApple className="w-4 h-4 text-white" />
-                        </span>
-                        App Store App
-                      </a>
-                      <a
-                        href={playStoreLink}
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center w-full sm:w-auto px-4 py-2 bg-gradient-to-r from-indigo-500 to-blue-500 text-white rounded-md hover:from-indigo-600 hover:to-blue-600 transition-colors duration-150"
-                      >
-                        <span className="flex items-center justify-center mr-2 w-6 h-6 bg-white/30 rounded-full">
-                          <FaGooglePlay className="w-4 h-4 text-white" />
-                        </span>
-                        Play Store App
-                      </a>
+                      {appStoreLink && (
+                        <a
+                          href={appStoreLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center w-full sm:w-auto px-4 py-2 bg-gradient-to-r from-indigo-500 to-blue-500 text-white rounded-md hover:from-indigo-600 hover:to-blue-600 transition-colors duration-150"
+                        >
+                          <span className="flex items-center justify-center mr-2 w-6 h-6 bg-white/30 rounded-full">
+                            <FaApple className="w-4 h-4 text-white" />
+                          </span>
+                          App Store App
+                        </a>
+                      )}
+                      {playStoreLink && (
+                        <a
+                          href={playStoreLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center w-full sm:w-auto px-4 py-2 bg-gradient-to-r from-indigo-500 to-blue-500 text-white rounded-md hover:from-indigo-600 hover:to-blue-600 transition-colors duration-150"
+                        >
+                          <span className="flex items-center justify-center mr-2 w-6 h-6 bg-white/30 rounded-full">
+                            <FaGooglePlay className="w-4 h-4 text-white" />
+                          </span>
+                          Play Store App
+                        </a>
+                      )}
                       {gitLink && (
                         <a
                           href={gitLink}

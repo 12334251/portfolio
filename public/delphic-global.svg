@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="capsule-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3FA9F5" />
+      <stop offset="100%" stop-color="#1A75FF" />
+    </linearGradient>
+    <linearGradient id="curve-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E5CAD" />
+      <stop offset="100%" stop-color="#003366" />
+    </linearGradient>
+  </defs>
+  <!-- Capsule on the left -->
+  <rect x="22" y="16" width="16" height="68" rx="8" fill="url(#capsule-grad)" />
+  <!-- Outer D-curve on the right -->
+  <path d="M 46 24 C 68 24 82 35 82 50 C 82 65 68 76 46 76" stroke="url(#curve-grad)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
